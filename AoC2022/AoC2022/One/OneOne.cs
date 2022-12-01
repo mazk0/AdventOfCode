@@ -2,12 +2,12 @@ namespace AoC2022.One;
 
 public static class OneOne
 {
-    public static int GetMaxTotalCalories()
+    public static int GetMaxTotalCalories(string dataFilepath)
     {
         var maxValue = 0;
         var currentValue = 0;
         
-        foreach (var dataRow in File.ReadLines("/Users/mazk0/Downloads/AoC2022/OneOneData.txt"))
+        foreach (var dataRow in File.ReadLines(dataFilepath))
         {
             if (string.IsNullOrEmpty(dataRow))
             {

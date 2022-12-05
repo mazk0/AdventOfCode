@@ -1,3 +1,4 @@
+using AoC2022.Five;
 using AoC2022.Four;
 using AoC2022.One;
 using AoC2022.Three;
@@ -45,5 +46,15 @@ Console.WriteLine(FourOne.GetOverlappingRangeCount(dayFourDataFilePath));
 Console.WriteLine("---");
 Console.WriteLine("FourTwo");
 Console.WriteLine(FourTwo.GetOverlappingRangeCount(dayFourDataFilePath));
+
+Console.WriteLine("-----");
+Console.WriteLine("Day five");
+const string dayFiveDataFilePath = "/workspaces/AdventOfCode/Data2022/DayFiveData.txt";
+
+Console.WriteLine("FiveOne");
+Console.WriteLine(FiveOne.GetSupplyStacks(dayFiveDataFilePath));
+Console.WriteLine("---");
+Console.WriteLine("FiveTwo");
+Console.WriteLine(FiveTwo.GetSupplyStacks(dayFiveDataFilePath));
 
 Console.WriteLine("-----");

@@ -1,6 +1,7 @@
 using AoC2022.Five;
 using AoC2022.Four;
 using AoC2022.One;
+using AoC2022.Six;
 using AoC2022.Three;
 using AoC2022.Two;
 
@@ -58,3 +59,12 @@ Console.WriteLine("FiveTwo");
 Console.WriteLine(FiveTwo.GetSupplyStacks(dayFiveDataFilePath));
 
 Console.WriteLine("-----");
+Console.WriteLine("Day six");
+const string daySixDataFilePath = "/workspaces/AdventOfCode/Data2022/DaySixData.txt";
+
+Console.WriteLine("SixOne");
+Console.WriteLine(SixOne.GetSupplyStacks(daySixDataFilePath));
+Console.WriteLine("---");
+
+Console.WriteLine("-----");
+

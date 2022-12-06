@@ -63,8 +63,10 @@ Console.WriteLine("Day six");
 const string daySixDataFilePath = "/workspaces/AdventOfCode/Data2022/DaySixData.txt";
 
 Console.WriteLine("SixOne");
-Console.WriteLine(SixOne.GetSupplyStacks(daySixDataFilePath));
+Console.WriteLine(SixOne.GetMessageStartIndex(daySixDataFilePath, 4));
 Console.WriteLine("---");
+Console.WriteLine("SixTwo");
+Console.WriteLine(SixOne.GetMessageStartIndex(daySixDataFilePath, 14));
 
 Console.WriteLine("-----");
 

@@ -1,3 +1,4 @@
+using AoC2022.Eight;
 using AoC2022.Five;
 using AoC2022.Four;
 using AoC2022.One;
@@ -78,3 +79,13 @@ Console.WriteLine(SevenOne.GetTotalSize(daySevenDataFilePath));
 Console.WriteLine("---");
 Console.WriteLine(nameof(SevenTwo));
 Console.WriteLine(SevenTwo.SizeOfFolderToDelete(daySevenDataFilePath));
+
+Console.WriteLine("-----");
+Console.WriteLine("Day eight");
+const string dayEightDataFilePath = "/workspaces/AdventOfCode/Data2022/DayEightData.txt";
+
+Console.WriteLine(nameof(EightOne));
+Console.WriteLine(EightOne.HowMayTreesVisible(dayEightDataFilePath));
+Console.WriteLine("---");
+Console.WriteLine(nameof(EightTwo));
+Console.WriteLine(EightTwo.HowValuableMostScenicTree(dayEightDataFilePath));

@@ -1,6 +1,7 @@
 using AoC2022.Five;
 using AoC2022.Four;
 using AoC2022.One;
+using AoC2022.Seven;
 using AoC2022.Six;
 using AoC2022.Three;
 using AoC2022.Two;
@@ -69,4 +70,11 @@ Console.WriteLine("SixTwo");
 Console.WriteLine(SixOne.GetMessageStartIndex(daySixDataFilePath, 14));
 
 Console.WriteLine("-----");
+Console.WriteLine("Day seven");
+const string daySevenDataFilePath = "/workspaces/AdventOfCode/Data2022/DaySevenData.txt";
 
+Console.WriteLine(nameof(SevenOne));
+Console.WriteLine(SevenOne.GetTotalSize(daySevenDataFilePath));
+Console.WriteLine("---");
+Console.WriteLine(nameof(SevenTwo));
+Console.WriteLine(SevenTwo.SizeOfFolderToDelete(daySevenDataFilePath));

@@ -5,6 +5,7 @@ using AoC2022.Nine;
 using AoC2022.One;
 using AoC2022.Seven;
 using AoC2022.Six;
+using AoC2022.Ten;
 using AoC2022.Three;
 using AoC2022.Two;
 
@@ -100,3 +101,13 @@ Console.WriteLine(NineOne.CalculateVisitedCount(dayNineDataFilePath));
 Console.WriteLine("---");
 Console.WriteLine(nameof(NineTwo));
 Console.WriteLine(NineTwo.CalculateVisitedCount(dayNineDataFilePath));
+
+Console.WriteLine("-----");
+Console.WriteLine("Day ten");
+const string dayTenDataFilePath = "/Users/mazk0/Developer/AdventOfCode/Data2022/DayTenData.txt";
+
+Console.WriteLine(nameof(TenOne));
+// Console.WriteLine(TenOne.GetSignalStrengthSum(dayTenDataFilePath));
+// Console.WriteLine("---");
+Console.WriteLine(nameof(TenTwo));
+Console.WriteLine(TenTwo.GetCapitalLettersOnTv(dayTenDataFilePath));

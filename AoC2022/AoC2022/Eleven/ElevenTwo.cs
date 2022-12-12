@@ -1,29 +1,31 @@
 namespace AoC2022.Eleven;
 
-public static class ElevenOne
+public static class ElevenTwo
 {
-    public static int GetLevelOfMonkeyBusiness(string dataFilepath)
+    public static long GetLevelOfMonkeyBusiness(string dataFilepath)
     {
         var monkeys = LoadMonkeyData(dataFilepath);
+        var leastCommonMultiple = monkeys.Select(monkey => monkey.TestDivider).Aggregate((a, b) => a * b);
 
-        for (var index = 0; index < 20; index++)
+        for (var index = 0; index < 10000; index++)
         {
             foreach (var monkey in monkeys)
             {
                 var items = monkey.Items;
                 ProcessItems(items, monkey);
 
-                TransferItems(items, monkey, monkeys);
+                TransferItems(items, monkey, monkeys, leastCommonMultiple);
 
                 items.Clear();
             }
         }
 
-        return monkeys
+        var monkeyBusiness = monkeys
             .Select(monkey => monkey.InspectedItemCount)
             .OrderDescending()
-            .Take(2)
-            .Aggregate((x, y) => x * y);
+            .Take(2);
+
+        return Convert.ToInt64(monkeyBusiness.First()) * Convert.ToInt64(monkeyBusiness.Last());
     }
     
     private static void ProcessItems(IList<long> items, Monkey monkey)
@@ -50,17 +52,17 @@ public static class ElevenOne
         }
     }
     
-    private static void TransferItems(IEnumerable<long> items, Monkey monkey, IReadOnlyList<Monkey> monkeys)
+    private static void TransferItems(IEnumerable<long> items, Monkey monkey, IReadOnlyList<Monkey> monkeys, int lowestCommonDivider)
     {
-        foreach (var dividedItem in items.Select(item => item / 3))
+        foreach (var item in items.Select(item => item % lowestCommonDivider))
         {
-            if (dividedItem % monkey.TestDivider == 0)
+            if (item % monkey.TestDivider == 0)
             {
-                monkeys[monkey.TargetTrue].Items.Add(dividedItem);
+                monkeys[monkey.TargetTrue].Items.Add(item);
             }
             else
             {
-                monkeys[monkey.TargetFalse].Items.Add(dividedItem);
+                monkeys[monkey.TargetFalse].Items.Add(item);
             }
         }
     }

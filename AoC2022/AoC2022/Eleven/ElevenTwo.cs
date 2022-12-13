@@ -52,9 +52,9 @@ public static class ElevenTwo
         }
     }
     
-    private static void TransferItems(IEnumerable<long> items, Monkey monkey, IReadOnlyList<Monkey> monkeys, int lowestCommonDivider)
+    private static void TransferItems(IEnumerable<long> items, Monkey monkey, IReadOnlyList<Monkey> monkeys, int leastCommonMultiple)
     {
-        foreach (var item in items.Select(item => item % lowestCommonDivider))
+        foreach (var item in items.Select(item => item % leastCommonMultiple))
         {
             if (item % monkey.TestDivider == 0)
             {

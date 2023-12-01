@@ -3,7 +3,7 @@
 const string baseDataPath = "/Users/mazk0/Developer/AdventOfCode/Data2023";
 
 Console.WriteLine("Day one");
-var dayOneDataFilePath = $"{baseDataPath} + ";
+var dayOneDataFilePath = $"{baseDataPath}/DayOneData.txt";
 
 Console.WriteLine(nameof(OneOne));
 Console.WriteLine(OneOne.Run(dayOneDataFilePath));

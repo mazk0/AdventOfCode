@@ -14,19 +14,19 @@ public static class OneOne
                 var currentFirst = dataRow[i];
                 var currentLast = dataRow[dataRow.Length - 1 - i];
                 
-                if (char.IsDigit(currentFirst) && firstDigit == 0)
+                if (48 < currentFirst && currentFirst < 58 && firstDigit == 0)
                 {
-                    firstDigit = Convert.ToInt32(char.GetNumericValue(currentFirst));
+                    firstDigit = currentFirst - 48;
                 }
                    
-                if (char.IsDigit(currentLast) && lastDigit == 0)
+                if (48 < currentLast && currentLast < 58 && lastDigit == 0)
                 {
-                    lastDigit = Convert.ToInt32(char.GetNumericValue(currentLast));
+                    lastDigit = currentLast - 48;
                 }
                 
                 if (firstDigit != 0 && lastDigit != 0)
                 {
-                    maxValue = maxValue + firstDigit * 10 + lastDigit;
+                    maxValue += firstDigit * 10 + lastDigit;
                     break;
                 }
             }

@@ -2,15 +2,15 @@ namespace AoC2023;
 
 public static class BinaryHelpers
 {
-    public static int ToBinaryNumberAt(this int numberOfWins)
+    public static int ToBinaryNumberAt(this int position)
     {
-        if (numberOfWins == 0)
+        if (position == 0)
         {
             return 0;
         }
         
         var numbers = new List<int>();
-        for (var i = 1; i <= numberOfWins; i++)
+        for (var i = 1; i <= position; i++)
         {
             switch (i)
             {
@@ -26,6 +26,6 @@ public static class BinaryHelpers
             }
         }
 
-        return numbers[numberOfWins - 1];
+        return numbers[position - 1];
     }
 }

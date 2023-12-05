@@ -50,11 +50,11 @@ Console.WriteLine(FourTwo.Run(dayFourDataFilePath));
 
 Console.WriteLine("-----");
 
-// Console.WriteLine("Day five");
-// var dayFiveDataFilePath = $"{baseDataPath}/DayFiveData.txt";
-//
-// Console.WriteLine(nameof(FiveOne));
-// Console.WriteLine(FiveOne.Run(dayFiveDataFilePath));
-// Console.WriteLine("---");
-// Console.WriteLine(nameof(FiveTwo));
-// Console.WriteLine(FiveTwo.Run(dayFiveDataFilePath));
+Console.WriteLine("Day five");
+var dayFiveDataFilePath = $"{baseDataPath}/DayFiveData.txt";
+
+Console.WriteLine(nameof(FiveOne));
+Console.WriteLine(FiveOne.Run(dayFiveDataFilePath));
+Console.WriteLine("---");
+Console.WriteLine(nameof(FiveTwo));
+Console.WriteLine(FiveTwo.Run(dayFiveDataFilePath));

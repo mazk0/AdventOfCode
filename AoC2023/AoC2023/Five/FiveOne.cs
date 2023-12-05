@@ -9,7 +9,7 @@ public static class FiveOne
         var currentMapName = "";
         var buildRange = false;
         var maps = new Dictionary<string, List<Map>>();
-        var destinations = new List<long>();
+        var destinations = long.MaxValue;
         foreach (var dataRow in File.ReadLines(dataFilepath))
         {
             if (dataRow.StartsWith("seeds"))
@@ -59,16 +59,12 @@ public static class FiveOne
                 }
             }
             
-            destinations.Add(s);
+            if (s < destinations)
+            {
+                destinations = s;
+            }
         }
 
-        return destinations.Min();
+        return destinations;
     }
-}
-
-class Map
-{
-    public long LowerLimit { get; set; }
-    public long UpperLimit { get; set; }
-    public long NewValueStart { get; set; }
 }

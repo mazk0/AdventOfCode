@@ -21,9 +21,9 @@ public static class FourTwo
 
             var count = row.Where(x => winning.Contains(x) && x != "").Count();
 
-            for (var i = 0; i < count; i++)
+            for (var i = 1; i < count; i++)
             {
-                cardsCount[gameId + i + 1] += cardsCount[gameId];
+                cardsCount[gameId + i] += cardsCount[gameId];
             }
         }
         

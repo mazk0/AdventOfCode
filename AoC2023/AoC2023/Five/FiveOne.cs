@@ -8,7 +8,7 @@ public static class FiveOne
         var mapNames = new List<string>();
         var currentMapName = "";
         var buildRange = false;
-        var maps = new Dictionary<string, Dictionary<long, long>>();
+        var maps = new Dictionary<string, List<Map>>();
         var destinations = new List<long>();
         foreach (var dataRow in File.ReadLines(dataFilepath))
         {
@@ -23,7 +23,7 @@ public static class FiveOne
                 var mapName = dataRow.Split(" ")[0];
                 mapNames.Add(mapName);
                 currentMapName = mapName;
-                maps.Add(mapName, new Dictionary<long, long>());
+                maps.Add(mapName, new List<Map>());
                 buildRange = true;
                 continue;
             }
@@ -31,10 +31,12 @@ public static class FiveOne
             if (buildRange && dataRow.Length > 0 && char.IsDigit(dataRow[0]))
             {
                 var parts = dataRow.Split(" ");
-                for (var i = 0; i < long.Parse(parts[2]); i++)
+                maps[currentMapName].Add(new Map
                 {
-                    maps[currentMapName].Add(long.Parse(parts[1]) + i, long.Parse(parts[0]) + i);
-                }
+                    LowerLimit = long.Parse(parts[1]),
+                    UpperLimit = long.Parse(parts[1]) + long.Parse(parts[2]) - 1,
+                    NewValueStart = long.Parse(parts[0])
+                });
             }
 
             if (dataFilepath.Length == 0 && buildRange)
@@ -48,9 +50,12 @@ public static class FiveOne
             foreach (var mapName in mapNames)
             {
                 var map = maps[mapName];
-                if (map.TryGetValue(s, out var value))
+                var hit = map.SingleOrDefault(x => x.LowerLimit <= s && s <= x.UpperLimit);
+
+                if (hit != null)
                 {
-                    s = value;
+                    s -= hit.LowerLimit;
+                    s += hit.NewValueStart;
                 }
             }
             
@@ -59,4 +64,11 @@ public static class FiveOne
 
         return destinations.Min();
     }
+}
+
+class Map
+{
+    public long LowerLimit { get; set; }
+    public long UpperLimit { get; set; }
+    public long NewValueStart { get; set; }
 }

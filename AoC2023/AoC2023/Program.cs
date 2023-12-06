@@ -1,6 +1,7 @@
 using AoC2023.Five;
 using AoC2023.Four;
 using AoC2023.One;
+using AoC2023.Six;
 using AoC2023.Three;
 using AoC2023.Two;
 
@@ -58,3 +59,14 @@ Console.WriteLine(FiveOne.Run(dayFiveDataFilePath));
 Console.WriteLine("---");
 Console.WriteLine(nameof(FiveTwo));
 Console.WriteLine(FiveTwo.Run(dayFiveDataFilePath));
+
+Console.WriteLine("-----");
+
+Console.WriteLine("Day six");
+var daySixDataFilePath = $"{baseDataPath}/DaySixData.txt";
+
+Console.WriteLine(nameof(SixOne));
+Console.WriteLine(SixOne.Run(daySixDataFilePath));
+Console.WriteLine("---");
+Console.WriteLine(nameof(SixTwo));
+Console.WriteLine(SixTwo.Run(daySixDataFilePath));

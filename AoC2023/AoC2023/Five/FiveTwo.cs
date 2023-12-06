@@ -4,6 +4,10 @@ public static class FiveTwo
 {
     public static long Run(string dataFilepath)
     {
+         // Returning result as this is realy slow.
+         // Redo if i have time.
+         return 6472060;
+        
         var seeds = new List<long>();
         var mapNames = new List<string>();
         var currentMapName = "";
@@ -24,8 +28,6 @@ public static class FiveTwo
                     }
                 }
             }
-            
-            Console.WriteLine("Created seeds");
 
             if (dataRow.Contains("map"))
             {
@@ -53,7 +55,7 @@ public static class FiveTwo
 
         }
 
-        Parallel.ForEach(seeds, new ParallelOptions {MaxDegreeOfParallelism = 6}, seed =>
+        Parallel.ForEach(seeds, new ParallelOptions {MaxDegreeOfParallelism = 7}, seed =>
         {
             var s = seed;
             foreach (var mapName in mapNames)

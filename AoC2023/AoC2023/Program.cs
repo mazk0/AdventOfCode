@@ -1,4 +1,5 @@
 using AoC2023.Eight;
+using AoC2023.Eleven;
 using AoC2023.Five;
 using AoC2023.Four;
 using AoC2023.Nine;
@@ -115,3 +116,14 @@ var dayTenDataFilePath = $"{baseDataPath}/DayTenData.txt";
 
 Console.WriteLine(nameof(TenOne));
 Console.WriteLine(TenOne.Run(dayTenDataFilePath));
+
+Console.WriteLine("-----");
+
+Console.WriteLine("Day eleven");
+var dayElevenDataFilePath = $"{baseDataPath}/DayElevenData.txt";
+
+Console.WriteLine(nameof(ElevenOne));
+Console.WriteLine(ElevenOne.Run(dayElevenDataFilePath));
+Console.WriteLine("---");
+Console.WriteLine(nameof(ElevenTwo));
+Console.WriteLine(ElevenTwo.Run(dayElevenDataFilePath));

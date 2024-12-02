@@ -27,13 +27,13 @@ public static class OneTwo
             }
 
             var count = 0;
-            for (var i = 0; i < rightList.Count; i++)
+            foreach (var rightNumber in rightList)
             {
-                if (rightList[i] == number)
+                if (rightNumber == number)
                 {
                     count++;
                 }
-                if(rightList[i] > number)
+                if(rightNumber > number)
                 {
                     break;
                 }

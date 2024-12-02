@@ -1,50 +1,55 @@
 namespace AoC2024.Two;
 
-public class TwoTwo
+public static class TwoTwo
 {
     public static int Run(string dataFilepath)
     {
         var maxValue = 0;
-        var leftList = new List<int>();
-        var rightList = new List<int>();
-        var dict = new Dictionary<int, int>();
 
         foreach (var dataRow in File.ReadLines(dataFilepath))
         {
-            var parts = dataRow.Split("   ");
-            leftList.Add(int.Parse(parts[0]));
-            rightList.Add(int.Parse(parts[1]));
-        }
-        
-        rightList.Sort();
-
-        foreach (var number in leftList)
-        {
-            if (dict.TryGetValue(number, out var value))
+            var numbers = dataRow.Split(' ').Select(int.Parse).ToList();
+            if (IsPassingRow(numbers))
             {
-                maxValue += value;
+                maxValue++;
                 continue;
             }
 
-            var count = 0;
-            for (var i = 0; i < rightList.Count; i++)
+            for (var i = 0; i < numbers.Count; i++)
             {
-                if (rightList[i] == number)
+                List<int> newNumbers = [..numbers];
+                newNumbers.RemoveAt(i);
+                if (IsPassingRow(newNumbers))
                 {
-                    count++;
-                }
-                if(rightList[i] > number)
-                {
+                    maxValue++;
                     break;
                 }
             }
-
-            var sum = number * count;
-            dict.Add(number, sum);
-            maxValue += sum;
         }
 
-
         return maxValue;
+    }
+
+    private static bool IsPassingRow(List<int> numbers)
+    {
+        var previous = numbers[0];
+        var increasing = numbers[0] < numbers[1];
+
+        for (var i = 1; i < numbers.Count; i++)
+        {
+            var current = numbers[i];
+            
+            if (current == previous ||
+                increasing && current < previous ||
+                !increasing && current > previous ||
+                Math.Abs(current - previous) > 3)
+            {
+                return false;
+            }
+                
+            previous = current;
+        }
+        
+        return true;
     }
 }

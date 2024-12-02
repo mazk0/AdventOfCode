@@ -19,41 +19,17 @@ public static class TwoOne
                 
                 if (current == previous)
                 {
-                    // Console.WriteLine($"{dataRow}: same");
-                    if (!dampened)
-                    {
-                        dampened = true;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 
                 if (i > 0 && (increasing && current < previous || !increasing && current > previous))
                 {
-                    // Console.WriteLine($"{dataRow}: changed direction");
-                    if (!dampened)
-                    {
-                        dampened = true;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
 
                 if (i > 0 && Math.Abs(current - previous) > 3)
                 {
-                    // Console.WriteLine($"{dataRow}: changed more than 3");
-                    if (!dampened)
-                    {
-                        dampened = true;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
                 
                 previous = current;

@@ -11,7 +11,6 @@ public static class TwoOne
             var previous = 0;
             var numbers = dataRow.Split(' ').Select(int.Parse).ToArray();
             var increasing = numbers[0] < numbers[1];
-            var dampened = false;
             
             for (var i = 0; i < numbers.Length; i++)
             {

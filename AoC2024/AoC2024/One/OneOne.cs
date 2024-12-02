@@ -1,6 +1,6 @@
 namespace AoC2024.One;
 
-public class OneOne
+public static class OneOne
 {
     public static int Run(string dataFilepath)
     {

@@ -1,6 +1,6 @@
-namespace AoC2024.One;
+namespace AoC2024.Two;
 
-public static class OneTwo
+public class TwoTwo
 {
     public static int Run(string dataFilepath)
     {

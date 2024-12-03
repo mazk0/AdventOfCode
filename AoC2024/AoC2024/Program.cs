@@ -1,4 +1,5 @@
 ﻿using AoC2024.One;
+using AoC2024.Three;
 using AoC2024.Two;
 
 const string baseDataPath = "/Users/mazk0/Developer/AdventOfCode/Data2024";
@@ -20,3 +21,12 @@ Console.WriteLine($"Was: {TwoOne.Run(dayTwoDataFilePath)} Should be: 564");
 Console.WriteLine("---");
 Console.WriteLine(nameof(TwoTwo));
 Console.WriteLine($"Was: {TwoTwo.Run(dayTwoDataFilePath)} Should be: 604");
+
+Console.WriteLine("Day three");
+var dayThreeDataFilePath = $"{baseDataPath}/DayThreeData.txt";
+
+Console.WriteLine(nameof(ThreeOne));
+Console.WriteLine($"Was: {ThreeOne.Run(dayThreeDataFilePath)} Should be: 173785482");
+Console.WriteLine("---");
+Console.WriteLine(nameof(ThreeTwo));
+Console.WriteLine($"Was: {ThreeTwo.Run(dayThreeDataFilePath)} Should be: 83158140");

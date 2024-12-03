@@ -17,7 +17,7 @@ public static partial class ThreeTwo
             var doString = doSplit.Split("don't()")[0];
             var matches = regex.Matches(doString);
             
-            foreach (var group in matches.Select(m => m.Groups))
+            foreach (var group in matches.Select(match => match.Groups))
             {
                 var value1 = int.Parse(group[1].Value);
                 var value2 = int.Parse(group[2].Value);

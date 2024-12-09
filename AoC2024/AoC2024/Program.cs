@@ -1,4 +1,5 @@
-﻿using AoC2024.Five;
+﻿using AoC2024.Eight;
+using AoC2024.Five;
 using AoC2024.Four;
 using AoC2024.One;
 using AoC2024.Seven;
@@ -70,3 +71,12 @@ Console.WriteLine($"Was: {SevenOne.Run(daySevenDataFilePath)} Should be: 1471193
 Console.WriteLine("---");
 Console.WriteLine(nameof(SevenTwo));
 Console.WriteLine($"Was: {SevenTwo.Run(daySevenDataFilePath)} Should be: 286580387663654");
+
+Console.WriteLine("Day eight");
+var dayEightDataFilePath = $"{baseDataPath}/DayEightData.txt";
+
+Console.WriteLine(nameof(EightOne));
+Console.WriteLine($"Was: {EightOne.Run(dayEightDataFilePath)} Should be: 303");
+Console.WriteLine("---");
+Console.WriteLine(nameof(EightTwo));
+Console.WriteLine($"Was: {EightTwo.Run(dayEightDataFilePath)} Should be: ?");

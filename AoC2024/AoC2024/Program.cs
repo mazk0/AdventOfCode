@@ -79,4 +79,4 @@ Console.WriteLine(nameof(EightOne));
 Console.WriteLine($"Was: {EightOne.Run(dayEightDataFilePath)} Should be: 303");
 Console.WriteLine("---");
 Console.WriteLine(nameof(EightTwo));
-Console.WriteLine($"Was: {EightTwo.Run(dayEightDataFilePath)} Should be: ?");
+Console.WriteLine($"Was: {EightTwo.Run(dayEightDataFilePath)} Should be: 1045");
